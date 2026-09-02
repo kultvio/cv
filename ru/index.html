@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Виталий Смекалов</title>
+<meta name="description" content="Виталий Смекалов — Python backend / data engineer. Django REST, Oracle DWH, ETL. 3 года в продакшене, удалённо.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Виталий Смекалов">
+<meta property="og:description" content="Виталий Смекалов — Python backend / data engineer. Django REST, Oracle DWH, ETL. 3 года в продакшене, удалённо.">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+  /* Резюме — документ на белой бумаге. Тема одна, светлая, сознательно:
+     color-scheme запрещает браузеру подкрашивать её под системную тёмную. */
+  :root {
+    color-scheme: light;
+    --paper:#FFFFFF; --ink:#111417; --body:#3E454C; --muted:#767D85;
+    --hair:#E2E4E2; --hair-mid:#C6CAC7; --page-bg:#E7E9E6;
+  }
+
+  * { box-sizing:border-box; }
+  html { background:var(--page-bg); }
+  body {
+    background:var(--page-bg); color:var(--body);
+    font-family:"Golos Text", system-ui, -apple-system, sans-serif;
+    font-size:14px; line-height:1.52; margin:0;
+    -webkit-font-smoothing:antialiased; padding:32px 16px;
+  }
+  .sheet {
+    max-width:820px; margin:0 auto; background:var(--paper);
+    border:1px solid var(--hair); display:grid; grid-template-columns:1fr;
+  }
+  @media (min-width:740px) { .sheet { grid-template-columns:238px 1fr; } }
+
+  .masthead {
+    grid-column:1 / -1; padding:38px 42px 20px; border-bottom:1px solid var(--ink);
+    display:flex; justify-content:space-between; align-items:flex-start; gap:20px;
+  }
+  .name {
+    font-weight:800; font-size:clamp(30px,4.6vw,38px); line-height:1;
+    letter-spacing:-.03em; color:var(--ink); margin:0; text-wrap:balance;
+  }
+  .role { font-size:14px; color:var(--muted); margin:10px 0 0; }
+  .role b { font-weight:500; color:var(--body); }
+
+  .langsw {
+    font-family:"JetBrains Mono", ui-monospace, monospace; font-size:11.5px;
+    letter-spacing:.04em; white-space:nowrap; padding-top:6px; color:var(--hair-mid);
+  }
+  .langsw b { color:var(--ink); font-weight:400; }
+  .langsw a { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--hair-mid); }
+  .langsw a:hover, .langsw a:focus-visible { color:var(--ink); border-bottom-color:var(--ink); }
+
+  h2 {
+    font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 9px; padding-bottom:5px; border-bottom:1px solid var(--hair);
+  }
+
+  .rail { padding:28px 30px 32px 42px; }
+  @media (max-width:739px){ .rail { border-bottom:1px solid var(--hair); padding:24px 26px; } }
+  .rail-block + .rail-block { margin-top:22px; }
+
+  .contact { display:flex; flex-direction:column; gap:5px; font-size:13.5px; }
+  .contact a { color:var(--ink); text-decoration:none; border-bottom:1px solid var(--hair-mid); width:fit-content; }
+  .contact a:hover, .contact a:focus-visible { border-bottom-color:var(--ink); }
+  .tel { font-family:"JetBrains Mono", ui-monospace, monospace; font-size:12.5px;
+         color:var(--ink); font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
+
+  .grp { margin-bottom:9px; }
+  .grp:last-child { margin-bottom:0; }
+  .grp dt { font-size:11.5px; color:var(--muted); margin-bottom:1px; }
+  .grp dd { margin:0; font-size:13px; line-height:1.42; color:var(--ink); font-weight:500; }
+
+  .edu-org { font-weight:600; color:var(--ink); font-size:13.5px; line-height:1.34; }
+  .edu-meta { font-size:12.5px; color:var(--muted); margin-top:3px; line-height:1.4; }
+  .lang { display:flex; justify-content:space-between; align-items:baseline; gap:10px;
+          font-size:13.5px; padding:2px 0; }
+  .lang b { font-weight:500; color:var(--ink); }
+  .lang span { font-size:12px; color:var(--muted); }
+  .fmt { font-size:13px; }
+
+  .main { padding:28px 42px 34px 0; border-left:1px solid var(--hair); padding-left:34px; }
+  @media (max-width:739px){ .main { border-left:none; padding:24px 26px 30px; } }
+  .block + .block { margin-top:22px; }
+
+  .summary { font-size:14.5px; line-height:1.56; color:var(--body); max-width:64ch; }
+  .summary b { font-weight:600; color:var(--ink); }
+
+  .job-head { display:flex; justify-content:space-between; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .job-title { font-weight:700; font-size:16.5px; color:var(--ink); letter-spacing:-.015em; }
+  .job-when { font-family:"JetBrains Mono", monospace; font-size:11.5px; color:var(--muted);
+              font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
+  .job-org { font-size:13.5px; color:var(--muted); margin-top:2px; }
+  .job-desc { font-size:13.5px; line-height:1.52; margin-top:10px; max-width:66ch; }
+  .job-desc b { font-weight:600; color:var(--ink); }
+
+  ul.bullets { list-style:none; margin:14px 0 0; padding:0; display:flex; flex-direction:column; gap:8px; }
+  ul.bullets li { position:relative; padding-left:16px; font-size:13.5px; line-height:1.5; max-width:68ch; }
+  ul.bullets li::before { content:""; position:absolute; left:0; top:9px; width:5px; height:1px; background:var(--hair-mid); }
+  ul.bullets b { font-weight:600; color:var(--ink); }
+
+  .proj { font-size:13.5px; line-height:1.5; max-width:66ch; }
+  .proj a { color:var(--muted); text-decoration:none; border-bottom:1px solid var(--hair-mid); }
+  .proj a:hover, .proj a:focus-visible { color:var(--ink); border-bottom-color:var(--ink); }
+  .proj b { font-weight:600; color:var(--ink); }
+
+  a:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+  .pdf-link { display:inline-block; margin-top:14px; font-size:12.5px; color:var(--muted);
+              text-decoration:none; border-bottom:1px solid var(--hair-mid); }
+  .pdf-link:hover, .pdf-link:focus-visible { color:var(--ink); border-bottom-color:var(--ink); }
+
+  @page { size:A4; margin:12mm; }
+  @media print {
+    html, body { background:#fff; }
+    body { padding:0; font-size:9.5pt; line-height:1.46; }
+    * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .sheet { border:none; max-width:none; grid-template-columns:54mm 1fr; }
+    .masthead { padding:0 0 8pt; }
+    .name { font-size:24pt; }
+    .role { font-size:9.6pt; margin-top:5pt; }
+    .langsw { display:none; }
+    h2 { font-size:7.8pt; margin-bottom:5pt; padding-bottom:3pt; }
+    .rail { padding:11pt 12pt 0 0; }
+    .rail-block + .rail-block { margin-top:12pt; }
+    .contact { gap:3.4pt; font-size:9.2pt; }
+    .tel { font-size:8.8pt; }
+    .fmt { font-size:9pt; }
+    .grp { margin-bottom:6pt; }
+    .grp dt { font-size:8pt; }
+    .grp dd { font-size:9pt; line-height:1.38; }
+    .edu-org { font-size:9.2pt; }
+    .edu-meta { font-size:8.6pt; }
+    .lang { font-size:9.2pt; padding:1.2pt 0; }
+    .lang span { font-size:8.2pt; }
+    .main { padding:11pt 0 0 14pt; border-left:.5pt solid var(--hair); }
+    .block + .block { margin-top:12pt; }
+    .summary { font-size:9.7pt; line-height:1.5; }
+    .job-title { font-size:11.6pt; }
+    .job-when, .job-org { font-size:8.8pt; }
+    .job-desc { font-size:9.4pt; line-height:1.47; margin-top:6pt; }
+    ul.bullets { gap:5.6pt; margin-top:9pt; }
+    ul.bullets li { font-size:9.4pt; line-height:1.47; padding-left:11pt; }
+    ul.bullets li::before { top:5.2pt; width:4pt; }
+    .proj { font-size:9.3pt; line-height:1.45; }
+    .pdf-link { display:none; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div>
+      <h1 class="name">Виталий Смекалов</h1>
+      <p class="role"><b>Python Backend Developer</b> · 3 года в продакшене · удалённо</p>
+    </div>
+    <div class="langsw"><b>RU</b> / <a href="../">EN</a></div>
+  </div>
+
+  <aside class="rail">
+
+    <div class="rail-block">
+      <h2>Связь</h2>
+      <div class="contact">
+        <a href="mailto:vitalii.smekalov@gmail.com">vitalii.smekalov@gmail.com</a>
+        <a href="https://github.com/kultvio">github.com/kultvio</a>
+        <a href="https://t.me/kultvio">t.me/kultvio</a>
+      </div>
+    </div>
+
+    <div class="rail-block">
+      <h2>Стек</h2>
+      <dl>
+        <div class="grp"><dt>Языки</dt><dd>Python, Go, SQL, TypeScript</dd></div>
+        <div class="grp"><dt>Бэкенд</dt><dd>Django REST Framework, FastAPI, Celery, Redis</dd></div>
+        <div class="grp"><dt>Фронтенд</dt><dd>React, Redux</dd></div>
+        <div class="grp"><dt>Базы данных</dt><dd>PostgreSQL, Oracle, PL/SQL, ODI</dd></div>
+        <div class="grp"><dt>Инфраструктура</dt><dd>Docker, Nginx, Keycloak, Git</dd></div>
+      </dl>
+    </div>
+
+    <div class="rail-block">
+      <h2>Образование</h2>
+      <div class="edu-org">Тихоокеанский государственный университет</div>
+      <div class="edu-meta">Компьютерная безопасность, ФКФН · Хабаровск</div>
+    </div>
+
+    <div class="rail-block">
+      <h2>Языки</h2>
+      <div class="lang"><b>Русский</b><span>родной</span></div>
+      <div class="lang"><b>Английский</b><span>B2</span></div>
+    </div>
+
+    <div class="rail-block">
+      <h2>Формат</h2>
+      <p class="fmt">Удалённо. Полная, частичная и проектная занятость.</p>
+      <a class="pdf-link" href="../smekalov-cv-ru.pdf">Скачать PDF</a>
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <section class="block">
+      <h2>Обо мне</h2>
+      <p class="summary">Бэкенд-разработчик на <b>Python</b>, второй язык — <b>Go</b>. Пишу сервисы целиком: схема данных, API, фоновые задачи, фронтенд, выкатка. Три года делаю внутренние продукты поверх корпоративного хранилища на Oracle, так что легаси-схемы и неудобные объёмы для меня привычная среда. Люблю задачи, где решение надо сначала обосновать данными, а не выбрать по привычке.</p>
+    </section>
+
+    <section class="block">
+      <h2>Опыт</h2>
+      <div class="job-head">
+        <span class="job-title">Python-разработчик</span>
+        <span class="job-when">август 2023 — настоящее время</span>
+      </div>
+      <div class="job-org">МегаФон · телекоммуникации · удалённо</div>
+      <p class="job-desc">Внутренние веб-сервисы для аналитиков и дежурной смены: портал контроля качества данных на Django REST + React и подсистема прогноза готовности витрин. Портал заменил ручные проверки через SQL и почту единым интерфейсом с автосопоставлением показателей и email-отчётами. Источник данных — корпоративное хранилище на Oracle DWH.</p>
+      <ul class="bullets">
+        <li><b>Бэкенд портала на Django REST Framework:</b> сервисный слой, dataclass-DTO на границах слоёв, доменные исключения с единой картой в HTTP-статусы, разграничение доступа по группам Active Directory, SSO через Keycloak.</li>
+        <li><b>SPA на React + Redux:</b> проверки, KPI, агрегаты, прогноз готовности. Задачу веду целиком, и бэкенд, и фронт.</li>
+        <li><b>Сервис прогноза готовности витрин.</b> Ночной сбор истории планировщика в PostgreSQL через Celery, квантильная модель с учётом календарных режимов и зависимостей задач, уточнение фактами текущего дня. Бэктест: <b>MAE 26 минут против 90</b> у наивной оценки, покрытие p90 ≈ 89 %.</li>
+        <li><b>Загрузка справочника KPI из CSV</b> с нечётким сопоставлением записей и автоматическим разбором на создание, обновление и закрытие показателей. Заменила ручную сверку файлов аналитиками.</li>
+        <li><b>Django ORM поверх легаси-схемы Oracle:</b> несколько алиасов баз данных, read-only модели над существующими таблицами.</li>
+        <li><b>Инциденты продуктивных ETL-потоков</b> (Oracle, ODI, PL/SQL) — разбор до причины: кодировки, региональные настройки базы, дубли SCD Type&nbsp;2, зависшие сессии.</li>
+        <li>Код-ревью кодовой базы с приоритизацией находок и планом устранения.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Пет-проект</h2>
+      <p class="proj"><b>open-lumen</b> — мессенджер со сквозным шифрованием. Бэкенд на Go, фронт на React и TypeScript. <a href="https://github.com/kultvio">github.com/kultvio</a></p>
+    </section>
+
+  </main>
+
+</div>
+</body>
+</html>
