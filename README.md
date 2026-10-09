@@ -1,8 +1,8 @@
-# CV — Vitalii Smekalov
+# CV: Vitalii Smekalov
 
-Python backend developer. Django REST, FastAPI, Celery, PostgreSQL. Second language — Go.
+Python backend developer: Django REST Framework, Celery, RabbitMQ, PostgreSQL, Oracle. Second language: Go.
 
-**[Open CV →](https://kultvio.github.io/cv/)** · [PDF](https://kultvio.github.io/cv/smekalov-cv.pdf)
+**[Open CV](https://kultvio.github.io/cv/)** · [PDF](https://kultvio.github.io/cv/smekalov-cv.pdf)
 
 Русская версия: **[резюме](https://kultvio.github.io/cv/ru/)** · [PDF](https://kultvio.github.io/cv/smekalov-cv-ru.pdf)
 

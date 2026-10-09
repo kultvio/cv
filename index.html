@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Vitalii Smekalov</title>
-<meta name="description" content="Vitalii Smekalov — Python backend / data engineer. Django REST, Oracle DWH, ETL. 3 years in production, remote.">
+<meta name="description" content="Vitalii Smekalov, Python backend developer. Django REST Framework, Celery, PostgreSQL, Oracle. 3 years of commercial development, remote.">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="Vitalii Smekalov">
-<meta property="og:description" content="Vitalii Smekalov — Python backend / data engineer. Django REST, Oracle DWH, ETL. 3 years in production, remote.">
+<meta property="og:description" content="Vitalii Smekalov, Python backend developer. Django REST Framework, Celery, PostgreSQL, Oracle. 3 years of commercial development, remote.">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap">
@@ -155,7 +155,7 @@
   <div class="masthead">
     <div>
       <h1 class="name">Vitalii Smekalov</h1>
-      <p class="role"><b>Python Backend Developer</b> · 3 years in production · remote</p>
+      <p class="role"><b>Python Backend Developer</b> · 3 years of commercial development · remote</p>
     </div>
     <div class="langsw"><b>EN</b> / <a href="ru/">RU</a></div>
   </div>
@@ -172,13 +172,13 @@
     </div>
 
     <div class="rail-block">
-      <h2>Stack</h2>
+      <h2>Skills</h2>
       <dl>
-        <div class="grp"><dt>Languages</dt><dd>Python, Go, SQL, TypeScript</dd></div>
-        <div class="grp"><dt>Backend</dt><dd>Django REST Framework, FastAPI, Celery, Redis</dd></div>
+        <div class="grp"><dt>Languages</dt><dd>Python 3, SQL, PL/SQL, Go, JavaScript, TypeScript</dd></div>
+        <div class="grp"><dt>Backend</dt><dd>Django, Django REST Framework, FastAPI, Celery, RabbitMQ, Redis, REST API, JWT, OAuth 2.0, Keycloak, LDAP</dd></div>
+        <div class="grp"><dt>Databases</dt><dd>PostgreSQL, Oracle, Greenplum, Oracle Data Integrator (ODI)</dd></div>
         <div class="grp"><dt>Frontend</dt><dd>React, Redux</dd></div>
-        <div class="grp"><dt>Databases</dt><dd>PostgreSQL, Oracle, PL/SQL, ODI</dd></div>
-        <div class="grp"><dt>Infrastructure</dt><dd>Docker, Nginx, Keycloak, Git</dd></div>
+        <div class="grp"><dt>Tools</dt><dd>Git, Docker, CI/CD, Nginx, Linux, unittest</dd></div>
       </dl>
     </div>
 
@@ -195,8 +195,8 @@
     </div>
 
     <div class="rail-block">
-      <h2>Availability</h2>
-      <p class="fmt">Remote only. Full-time, part-time or project-based.</p>
+      <h2>Work format</h2>
+      <p class="fmt">Remote. Full-time, part-time or project-based.</p>
       <a class="pdf-link" href="smekalov-cv.pdf">Download PDF</a>
     </div>
 
@@ -205,32 +205,32 @@
   <main class="main">
 
     <section class="block">
-      <h2>Profile</h2>
-      <p class="summary">Backend developer working in <b>Python</b>, with <b>Go</b> as a second language. I build services end to end: data schema, API, background jobs, frontend, deployment. For three years I have been building internal products on top of a corporate Oracle warehouse, so legacy schemas and awkward data volumes are familiar ground. I like problems where the solution has to be justified with data instead of picked out of habit.</p>
+      <h2>Summary</h2>
+      <p class="summary">I build backends in Python: models and REST APIs with Django REST Framework, background jobs with Celery, and a React frontend when the task needs one. For three years I have worked with enterprise data in Oracle and PostgreSQL.</p>
     </section>
 
     <section class="block">
       <h2>Experience</h2>
       <div class="job-head">
-        <span class="job-title">Python Developer</span>
-        <span class="job-when">August 2023 — present</span>
+        <span class="job-title">Lead Engineer (Python service development)</span>
+        <span class="job-when">Aug 2023 - present (3 years 2 months)</span>
       </div>
-      <div class="job-org">MegaFon · telecom · remote</div>
-      <p class="job-desc">Internal web services for analysts and the on-call data team: a data quality portal built on Django REST + React, and a data mart readiness forecasting subsystem. The portal replaced manual checks over SQL and email with a single interface featuring automated metric matching and email reports. Source of record — a corporate Oracle data warehouse.</p>
+      <div class="job-org">MegaFon, telecommunications · remote</div>
+      <p class="job-desc">Enterprise data warehouse operations team. I develop internal data quality services for analysts and the on-call shift on top of Oracle DWH and Greenplum.</p>
       <ul class="bullets">
-        <li><b>Portal backend on Django REST Framework:</b> service layer, dataclass DTOs at layer boundaries, domain exceptions with a single mapping to HTTP statuses, access control by Active Directory groups, SSO via Keycloak.</li>
-        <li><b>React + Redux SPA:</b> checks, KPIs, aggregates, readiness forecast. I own the feature end to end, backend and frontend alike.</li>
-        <li><b>Readiness forecasting service.</b> Nightly collection of scheduler history into PostgreSQL via Celery, a quantile model accounting for calendar patterns and job dependencies, refined intraday. Backtested at <b>MAE 26 minutes against 90</b> for the naive estimate, p90 coverage ≈ 89 %.</li>
-        <li><b>KPI catalogue ingestion from CSV</b> with fuzzy record matching and automatic classification into created, updated and closed metrics. Replaced manual file reconciliation by analysts.</li>
-        <li><b>Django ORM over a legacy Oracle schema:</b> multiple database aliases, read-only models on top of existing tables.</li>
-        <li><b>Production ETL incidents</b> (Oracle, ODI, PL/SQL) investigated to root cause: character-set issues, NLS settings, SCD Type&nbsp;2 duplicates, hung sessions.</li>
-        <li>Ran a code review of the codebase with prioritised findings and a remediation plan.</li>
+        <li><b>Data mart readiness forecasting service</b> (Django, Celery, PostgreSQL). Designed and built it from scratch: collecting scheduler history from Oracle (about 270 tasks, a dependency graph of 68k links), a quantile-based statistical model that accounts for the calendar and task dependencies, and forecast updates from the current day's facts. Mean error in production is 33 minutes versus 123 for an estimate based on the historical norm.</li>
+        <li>Owned the project from requirements to release: gathered requirements from the on-call shift and analysts, documented the architecture decision (ADR), presented the results in a talk.</li>
+        <li>Set up quality control for the model: backtesting on historical data with MAE and p90 coverage metrics, about 170 unit tests. Changes to the forecast logic are accepted only on backtest results.</li>
+        <li><b>Data quality portal</b> (Django REST Framework, React, Redux): dashboard and KPI checks, HTML email reports, SSO via Keycloak (JWT), access control by Active Directory groups (LDAP). The portal replaced manual metric reconciliation through SQL and email.</li>
+        <li>Background jobs on Celery with RabbitMQ as the broker, schedules in Redis (redbeat), idempotent processing for redelivered tasks. Services run in Kubernetes; Docker image builds and CI/CD.</li>
+        <li>Integration with the enterprise warehouse: Django ORM over a legacy Oracle schema, several databases in one project (PostgreSQL, Oracle, Greenplum), loading reference data from CSV with fuzzy record matching.</li>
+        <li>Reviewed the portal codebase and drew up a prioritized refactoring plan. Investigated ETL incidents (Oracle, ODI, PL/SQL) down to the root cause.</li>
       </ul>
     </section>
 
     <section class="block">
       <h2>Side project</h2>
-      <p class="proj"><b>open-lumen</b> — an end-to-end encrypted messenger. Go backend, React and TypeScript on the front. <a href="https://github.com/kultvio">github.com/kultvio</a></p>
+      <p class="proj"><b>open-lumen</b>: an end-to-end encrypted messenger. Go backend, React and TypeScript frontend. <a href="https://github.com/kultvio">github.com/kultvio</a></p>
     </section>
 
   </main>
